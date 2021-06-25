@@ -23,7 +23,6 @@ struct Car: Codable {
            return "Álcool"
         default:
         return "Gasolina"
-          
         }
     }
 }
