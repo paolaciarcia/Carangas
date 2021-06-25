@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		601EA7A226863F510050CA05 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7A126863F510050CA05 /* AppDelegate.swift */; };
 		601EA7A426863F510050CA05 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7A326863F510050CA05 /* SceneDelegate.swift */; };
-		601EA7A626863F510050CA05 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7A526863F510050CA05 /* ViewController.swift */; };
 		601EA7A926863F510050CA05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601EA7A726863F510050CA05 /* Main.storyboard */; };
 		601EA7AB26863F5A0050CA05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 601EA7AA26863F5A0050CA05 /* Assets.xcassets */; };
 		601EA7AE26863F5A0050CA05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 601EA7AC26863F5A0050CA05 /* LaunchScreen.storyboard */; };
@@ -22,7 +21,6 @@
 		601EA79E26863F510050CA05 /* Carangas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carangas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		601EA7A126863F510050CA05 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		601EA7A326863F510050CA05 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		601EA7A526863F510050CA05 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		601EA7A826863F510050CA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		601EA7AA26863F5A0050CA05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		601EA7AD26863F5A0050CA05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -64,7 +62,6 @@
 			children = (
 				601EA7A126863F510050CA05 /* AppDelegate.swift */,
 				601EA7A326863F510050CA05 /* SceneDelegate.swift */,
-				601EA7A526863F510050CA05 /* ViewController.swift */,
 				601EA7A726863F510050CA05 /* Main.storyboard */,
 				601EA7BC268648540050CA05 /* AddEditViewController.swift */,
 				601EA7B9268648250050CA05 /* CarViewController.swift */,
@@ -149,7 +146,6 @@
 				601EA7BA268648260050CA05 /* CarViewController.swift in Sources */,
 				601EA7B7268647E20050CA05 /* CarsTableViewController.swift in Sources */,
 				601EA7BD268648540050CA05 /* AddEditViewController.swift in Sources */,
-				601EA7A626863F510050CA05 /* ViewController.swift in Sources */,
 				601EA7A226863F510050CA05 /* AppDelegate.swift in Sources */,
 				601EA7A426863F510050CA05 /* SceneDelegate.swift in Sources */,
 			);
