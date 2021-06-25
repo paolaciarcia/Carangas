@@ -15,6 +15,7 @@
 		601EA7B7268647E20050CA05 /* CarsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7B6268647E20050CA05 /* CarsTableViewController.swift */; };
 		601EA7BA268648260050CA05 /* CarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7B9268648250050CA05 /* CarViewController.swift */; };
 		601EA7BD268648540050CA05 /* AddEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7BC268648540050CA05 /* AddEditViewController.swift */; };
+		601EA7C126865CFF0050CA05 /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601EA7C026865CFF0050CA05 /* Car.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		601EA7B6268647E20050CA05 /* CarsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarsTableViewController.swift; sourceTree = "<group>"; };
 		601EA7B9268648250050CA05 /* CarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarViewController.swift; sourceTree = "<group>"; };
 		601EA7BC268648540050CA05 /* AddEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditViewController.swift; sourceTree = "<group>"; };
+		601EA7C026865CFF0050CA05 /* Car.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				601EA7BC268648540050CA05 /* AddEditViewController.swift */,
 				601EA7B9268648250050CA05 /* CarViewController.swift */,
 				601EA7B6268647E20050CA05 /* CarsTableViewController.swift */,
+				601EA7C026865CFF0050CA05 /* Car.swift */,
 				601EA7AA26863F5A0050CA05 /* Assets.xcassets */,
 				601EA7AC26863F5A0050CA05 /* LaunchScreen.storyboard */,
 				601EA7AF26863F5A0050CA05 /* Info.plist */,
@@ -145,6 +148,7 @@
 			files = (
 				601EA7BA268648260050CA05 /* CarViewController.swift in Sources */,
 				601EA7B7268647E20050CA05 /* CarsTableViewController.swift in Sources */,
+				601EA7C126865CFF0050CA05 /* Car.swift in Sources */,
 				601EA7BD268648540050CA05 /* AddEditViewController.swift in Sources */,
 				601EA7A226863F510050CA05 /* AppDelegate.swift in Sources */,
 				601EA7A426863F510050CA05 /* SceneDelegate.swift in Sources */,
