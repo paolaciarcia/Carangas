@@ -9,9 +9,27 @@ import UIKit
 
 class CarsTableViewController: UITableViewController {
     
-
+    var cars: [Car] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        Rest.loadCars { apiCars in
+            
+            self.cars = apiCars.filter { car in
+                return !car.name.isEmpty
+            }
+
+            print("filteredEmptyString: \(self.cars)")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        } onError: { (error) in
+            print(error)
+        }
     }
     
     @IBAction func addCar(_ sender: UIBarButtonItem) {
@@ -21,13 +39,17 @@ class CarsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return cars.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-
+        
+        let car = cars[indexPath.row]
+        
+            cell.textLabel?.text = car.name
+            cell.detailTextLabel?.text = car.brand
 
         return cell
     }

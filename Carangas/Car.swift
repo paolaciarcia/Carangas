@@ -8,7 +8,7 @@
 import Foundation
 
 struct Car: Codable {
-    let id: String
+    let _id: String
     let brand: String
     let gasType: Int
     let name: String
