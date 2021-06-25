@@ -8,22 +8,21 @@
 import UIKit
 
 class AddEditViewController: UIViewController {
+    
+    @IBOutlet weak var brandTextField: UITextField!
+    @IBOutlet weak var carNameTextField: UITextField!
+    @IBOutlet weak var priceTextField: UITextField!
+    @IBOutlet weak var fuelTypeSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func registerCarPressed(_ sender: UIButton) {
     }
-    */
-
+    
 }

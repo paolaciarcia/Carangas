@@ -55,6 +55,7 @@
                         <barButtonItem key="backBarButtonItem" title="Carangas" id="Md1-zW-D0L"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="hKt-Jg-6K0">
                             <connections>
+                                <action selector="addCar:" destination="y6Z-LV-Pam" id="OeU-ye-3Y1"/>
                                 <segue destination="wEC-dK-xvK" kind="show" identifier="addNewCar" id="ELT-79-3AL"/>
                             </connections>
                         </barButtonItem>
@@ -107,10 +108,16 @@
                     <navigationItem key="navigationItem" title="Caranga" id="AJV-oZ-r3H">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="LJW-ks-0rF">
                             <connections>
+                                <action selector="editCar:" destination="zY2-cL-ycy" id="pbx-if-k9T"/>
                                 <segue destination="wEC-dK-xvK" kind="show" identifier="editCar" id="JTZ-lZ-lwW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brand" destination="UaW-cr-XPp" id="Eo0-qn-DGk"/>
+                        <outlet property="gasType" destination="iiU-mF-5Ss" id="2aE-EN-ZYE"/>
+                        <outlet property="price" destination="9qx-8e-UFM" id="gfN-kV-TQc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1r-5o-IKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +171,9 @@
                                                 <integer key="value" value="6"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="registerCarPressed:" destination="wEC-dK-xvK" eventType="touchUpInside" id="jmB-cO-CRo"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -185,6 +195,14 @@
                     <navigationItem key="navigationItem" title="Cadastro" id="gOQ-bH-vn9">
                         <barButtonItem key="backBarButtonItem" title="Carangas" id="GUG-Ae-XrF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="brandTextField" destination="y1y-CO-7Bh" id="Te2-xb-w0p"/>
+                        <outlet property="carNameTextField" destination="D2G-hk-oiY" id="u7h-rV-kGN"/>
+                        <outlet property="fuelTypeSegmentedControl" destination="6F1-M0-Af8" id="Rpr-9N-Lsw"/>
+                        <outlet property="loading" destination="hs6-lL-gek" id="yFb-A9-X0N"/>
+                        <outlet property="priceTextField" destination="4vX-B7-gyA" id="Ihh-Jt-Tog"/>
+                        <outlet property="registerButton" destination="hQI-Sl-UmA" id="EJQ-gH-65p"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="awW-cu-LIe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,7 +228,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JTZ-lZ-lwW"/>
+        <segue reference="ELT-79-3AL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="main">
