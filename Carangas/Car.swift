@@ -8,11 +8,11 @@
 import Foundation
 
 struct Car: Codable {
-    let _id: String
-    let brand: String
-    let gasType: Int
-    let name: String
-    let price: Double
+    var _id: String?
+    var brand: String = ""
+    var gasType: Int = 0
+    var name: String = ""
+    var price: Double = 0.0
     
     var gas: String {
         
