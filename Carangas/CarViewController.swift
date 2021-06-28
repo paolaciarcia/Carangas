@@ -17,6 +17,10 @@ class CarViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         brand.text = car.brand
         gasType.text = car.gas
         price.text = "R$ \(car.price)"
