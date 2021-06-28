@@ -60,4 +60,18 @@ class CarsTableViewController: UITableViewController {
             carVC.car = cars[tableView.indexPathForSelectedRow!.row]
         }
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let car = cars[indexPath.row]
+            Rest.deleteCar(car: car) { (success) in
+                if success {
+                    self.cars.remove(at: indexPath.row)
+                    DispatchQueue.main.async {
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    }
+                }
+            }
+        }
+    }
 }

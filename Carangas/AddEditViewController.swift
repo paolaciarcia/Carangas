@@ -18,12 +18,14 @@ class AddEditViewController: UIViewController {
     
     var car: Car!
     
+    var didFinishUpdatingCar: ((Car) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if car != nil {
             brandTextField.text = car.brand
             carNameTextField.text = car.name
-            priceTextField.text = "R$ \(car.price)"
+            priceTextField.text = "\(car.price)"
             fuelTypeSegmentedControl.selectedSegmentIndex = car.gasType
             registerButton.setTitle("Alterar carro", for: .normal)
         }
@@ -31,6 +33,7 @@ class AddEditViewController: UIViewController {
     
     func goBack() {
         DispatchQueue.main.async {
+            self.didFinishUpdatingCar?(self.car)
             self.navigationController?.popViewController(animated: true)
         }
     }
@@ -50,9 +53,9 @@ class AddEditViewController: UIViewController {
                 self.goBack()
             }
         } else {
-            Rest.updateCar(car: car) { (success) in
+            Rest.updateCar(car: car, onComplete: { (success) in
                 self.goBack()
-            }
+            })
         }
     }
 }

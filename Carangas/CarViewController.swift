@@ -21,6 +21,8 @@ class CarViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        title = car.name
         brand.text = car.brand
         gasType.text = car.gas
         price.text = "R$ \(car.price)"
@@ -29,5 +31,9 @@ class CarViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as? AddEditViewController
         vc?.car = car
+
+        vc?.didFinishUpdatingCar = { updatedCar in
+            self.car = updatedCar
+        }
     }
 }
