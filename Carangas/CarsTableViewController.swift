@@ -22,8 +22,7 @@ class CarsTableViewController: UITableViewController {
             self.cars = apiCars.filter { car in
                 return !car.name.isEmpty
             }
-
-            print("filteredEmptyString: \(self.cars)")
+            print("apiCars: \(self.cars)")
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
