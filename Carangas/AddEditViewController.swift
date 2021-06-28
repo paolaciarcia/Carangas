@@ -20,7 +20,13 @@ class AddEditViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if car != nil {
+            brandTextField.text = car.brand
+            carNameTextField.text = car.name
+            priceTextField.text = "R$ \(car.price)"
+            fuelTypeSegmentedControl.selectedSegmentIndex = car.gasType
+            registerButton.setTitle("Alterar carro", for: .normal)
+        }
     }
     
     func goBack() {
@@ -39,8 +45,14 @@ class AddEditViewController: UIViewController {
             car.price = price
             car.gasType = fuelType
         
-        Rest.saveCar(car: car) { (success) in
-            self.goBack()
+        if car._id == nil {
+            Rest.saveCar(car: car) { (success) in
+                self.goBack()
+            }
+        } else {
+            Rest.updateCar(car: car) { (success) in
+                self.goBack()
+            }
         }
     }
 }

@@ -108,7 +108,6 @@
                     <navigationItem key="navigationItem" title="Caranga" id="AJV-oZ-r3H">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="edit" id="LJW-ks-0rF">
                             <connections>
-                                <action selector="editCar:" destination="zY2-cL-ycy" id="pbx-if-k9T"/>
                                 <segue destination="wEC-dK-xvK" kind="show" identifier="editCar" id="JTZ-lZ-lwW"/>
                             </connections>
                         </barButtonItem>
@@ -228,7 +227,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ELT-79-3AL"/>
+        <segue reference="JTZ-lZ-lwW"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="main">
