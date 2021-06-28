@@ -72,20 +72,52 @@
 			children = (
 				601EA7A126863F510050CA05 /* AppDelegate.swift */,
 				601EA7A326863F510050CA05 /* SceneDelegate.swift */,
-				601EA7A726863F510050CA05 /* Main.storyboard */,
+				60D98EA4268A6A6400A0DEEF /* Model */,
+				60D98EA3268A6A5200A0DEEF /* View */,
+				60D98EA2268A6A4200A0DEEF /* Controller */,
+				60D98EA7268A6A8E00A0DEEF /* SupportFiles */,
+				601EA7AC26863F5A0050CA05 /* LaunchScreen.storyboard */,
+			);
+			path = Carangas;
+			sourceTree = "<group>";
+		};
+		60D98EA2268A6A4200A0DEEF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
 				601EA7B9268648250050CA05 /* CarViewController.swift */,
 				601EA7BC268648540050CA05 /* AddEditViewController.swift */,
 				601EA7B6268647E20050CA05 /* CarsTableViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		60D98EA3268A6A5200A0DEEF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				601EA7A726863F510050CA05 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		60D98EA4268A6A6400A0DEEF /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				601EA7C026865CFF0050CA05 /* Car.swift */,
 				601EA7C3268662640050CA05 /* Rest.swift */,
 				60D98E9F268A550700A0DEEF /* Brand.swift */,
 				60D98E9B268A369200A0DEEF /* RestOperation.swift */,
 				601EA7C7268679E20050CA05 /* CarError.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		60D98EA7268A6A8E00A0DEEF /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
 				601EA7AA26863F5A0050CA05 /* Assets.xcassets */,
-				601EA7AC26863F5A0050CA05 /* LaunchScreen.storyboard */,
 				601EA7AF26863F5A0050CA05 /* Info.plist */,
 			);
-			path = Carangas;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
