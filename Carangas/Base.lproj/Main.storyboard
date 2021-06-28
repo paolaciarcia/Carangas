@@ -96,13 +96,31 @@
                                     </label>
                                 </subviews>
                             </stackView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9V-EW-K8R">
+                                <rect key="frame" x="0.0" y="259.5" width="414" height="636.5"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mRC-ka-ZFN">
+                                <rect key="frame" x="188.5" y="559.5" width="37" height="37"/>
+                                <color key="color" name="main"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pXd-hK-yUR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="L1d-bH-NDR" secondAttribute="trailing" constant="14" id="9xs-AX-kSD"/>
+                            <constraint firstAttribute="trailing" secondItem="u9V-EW-K8R" secondAttribute="trailing" id="AXa-qH-Fbb"/>
+                            <constraint firstItem="mRC-ka-ZFN" firstAttribute="centerX" secondItem="u9V-EW-K8R" secondAttribute="centerX" id="Kn4-fV-rT7"/>
                             <constraint firstItem="L1d-bH-NDR" firstAttribute="leading" secondItem="IhA-gV-gKW" secondAttribute="leadingMargin" constant="14" id="QJb-vs-i4x"/>
+                            <constraint firstItem="u9V-EW-K8R" firstAttribute="top" secondItem="L1d-bH-NDR" secondAttribute="bottom" constant="30" id="TZf-FZ-tt8"/>
+                            <constraint firstItem="u9V-EW-K8R" firstAttribute="leading" secondItem="IhA-gV-gKW" secondAttribute="leading" id="W9s-be-QKQ"/>
+                            <constraint firstAttribute="bottom" secondItem="u9V-EW-K8R" secondAttribute="bottom" id="X0a-Th-gr9"/>
                             <constraint firstItem="L1d-bH-NDR" firstAttribute="top" secondItem="pXd-hK-yUR" secondAttribute="top" constant="20" id="o31-0s-3b9"/>
+                            <constraint firstItem="mRC-ka-ZFN" firstAttribute="centerY" secondItem="u9V-EW-K8R" secondAttribute="centerY" id="zgO-hb-x3a"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Caranga" id="AJV-oZ-r3H">
@@ -115,12 +133,14 @@
                     <connections>
                         <outlet property="brand" destination="UaW-cr-XPp" id="Eo0-qn-DGk"/>
                         <outlet property="gasType" destination="iiU-mF-5Ss" id="2aE-EN-ZYE"/>
+                        <outlet property="loading" destination="mRC-ka-ZFN" id="sbG-dY-4Pg"/>
                         <outlet property="price" destination="9qx-8e-UFM" id="gfN-kV-TQc"/>
+                        <outlet property="webView" destination="u9V-EW-K8R" id="6Tu-N6-NUd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q1r-5o-IKf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2945" y="519"/>
+            <point key="canvasLocation" x="2944.9275362318845" y="518.30357142857144"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="Q4D-zv-cpr">
