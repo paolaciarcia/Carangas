@@ -9,5 +9,4 @@ import Foundation
 
 struct Brand: Codable {
     let fipe_name: String
-  
 }

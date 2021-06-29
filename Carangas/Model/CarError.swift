@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 enum CarError {
     case url
     case taskError(error: Error)

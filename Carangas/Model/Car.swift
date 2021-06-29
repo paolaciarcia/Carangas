@@ -15,7 +15,6 @@ struct Car: Codable {
     var price: Double = 0.0
     
     var gas: String {
-        
         switch gasType {
         case 0:
            return "Flex"

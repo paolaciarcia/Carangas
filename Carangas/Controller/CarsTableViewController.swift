@@ -9,6 +9,7 @@ import UIKit
 
 class CarsTableViewController: UITableViewController {
     
+    //MARK: - Properties
     var cars: [Car] = []
     var label: UILabel = {
         let label = UILabel()
@@ -17,6 +18,7 @@ class CarsTableViewController: UITableViewController {
         return label
     }()
     
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = "Carregando carros..."
@@ -25,14 +27,17 @@ class CarsTableViewController: UITableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         Rest.loadCars { apiCars in
-            
             self.cars = apiCars.filter { car in
                 return !car.name.isEmpty
             }
             print("apiCars: \(self.cars)")
+            
             DispatchQueue.main.async {
-                self.label.text = "Não existem carros cadastrados"
-                self.tableView.reloadData()
+                if self.cars.isEmpty {
+                    self.label.text = "Não existem carros cadastrados"
+                } else {
+                    self.tableView.reloadData()
+                }
             }
         } onError: { (error) in
             print(error)
@@ -46,7 +51,6 @@ class CarsTableViewController: UITableViewController {
         return cars.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         
@@ -58,7 +62,6 @@ class CarsTableViewController: UITableViewController {
         return cell
     }
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showCarDetail" {
         let carVC = segue.destination as! CarViewController

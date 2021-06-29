@@ -17,6 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="zlG-yo-c2c">
+                            <rect key="frame" x="0.0" y="99.5" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="aAc-Sd-JSX" detailTextLabel="TbO-ml-USo" style="IBUITableViewCellStyleValue1" id="6Wk-cj-pXe">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -74,22 +79,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="L1d-bH-NDR">
-                                <rect key="frame" x="34" y="160" width="346" height="69.5"/>
+                                <rect key="frame" x="20" y="160" width="360" height="69.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marca" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UaW-cr-XPp">
-                                        <rect key="frame" x="0.0" y="0.0" width="346" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" name="main"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Combustível" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiU-mF-5Ss">
-                                        <rect key="frame" x="0.0" y="24.5" width="346" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="24.5" width="360" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qx-8e-UFM">
-                                        <rect key="frame" x="0.0" y="49" width="346" height="20.5"/>
+                                        <rect key="frame" x="0.0" y="49" width="360" height="20.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -115,7 +120,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="L1d-bH-NDR" secondAttribute="trailing" constant="14" id="9xs-AX-kSD"/>
                             <constraint firstAttribute="trailing" secondItem="u9V-EW-K8R" secondAttribute="trailing" id="AXa-qH-Fbb"/>
                             <constraint firstItem="mRC-ka-ZFN" firstAttribute="centerX" secondItem="u9V-EW-K8R" secondAttribute="centerX" id="Kn4-fV-rT7"/>
-                            <constraint firstItem="L1d-bH-NDR" firstAttribute="leading" secondItem="IhA-gV-gKW" secondAttribute="leadingMargin" constant="14" id="QJb-vs-i4x"/>
+                            <constraint firstItem="L1d-bH-NDR" firstAttribute="leading" secondItem="IhA-gV-gKW" secondAttribute="leadingMargin" id="QJb-vs-i4x"/>
                             <constraint firstItem="u9V-EW-K8R" firstAttribute="top" secondItem="L1d-bH-NDR" secondAttribute="bottom" constant="30" id="TZf-FZ-tt8"/>
                             <constraint firstItem="u9V-EW-K8R" firstAttribute="leading" secondItem="IhA-gV-gKW" secondAttribute="leading" id="W9s-be-QKQ"/>
                             <constraint firstAttribute="bottom" secondItem="u9V-EW-K8R" secondAttribute="bottom" id="X0a-Th-gr9"/>
@@ -247,7 +252,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="JTZ-lZ-lwW"/>
+        <segue reference="ELT-79-3AL"/>
     </inferredMetricsTieBreakers>
     <resources>
         <namedColor name="main">

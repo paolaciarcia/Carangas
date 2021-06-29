@@ -7,8 +7,8 @@
 
 import Foundation
 
-enum RestOperation {
-    case save
-    case update
-    case delete
+enum RestOperation: String {
+    case save = "POST"
+    case update = "PUT"
+    case delete = "DELETE"
 }

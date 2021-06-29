@@ -30,27 +30,21 @@ class Rest {
         }
         
         let dataTask = session.dataTask(with: url) { (data, response, error) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
-                    onComplete(nil)
-                    return
-                }
-                if response.statusCode == 200 {
-                    guard let data = data else { return }
-                    do {
-                    let brands = try JSONDecoder().decode([Brand].self, from: data)
-                        onComplete(brands)
-                    } catch {
-                        print(error.localizedDescription)
-                        onComplete(nil)
-                    }
-                    
-                } else {
-                    print("status inválido pelo servidor")
-                    onComplete(nil)
-                }
-                
-            } else {
+            guard
+                error == nil,
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200,
+                let data = data
+            else {
+                onComplete(nil)
+                return
+            }
+            
+            do {
+                let brands = try JSONDecoder().decode([Brand].self, from: data)
+                onComplete(brands)
+            } catch {
+                print(error.localizedDescription)
                 onComplete(nil)
             }
         }
@@ -64,32 +58,33 @@ class Rest {
         }
         
         let dataTask = session.dataTask(with: url) { (data, response, error) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse else {
-                    onError(.noResponse)
-                    return
-                }
-                if response.statusCode == 200 {
-                    guard let data = data else { return }
-                    do {
-                    let cars = try JSONDecoder().decode([Car].self, from: data)
-                       onComplete(cars)
-                    } catch {
-                        print(error.localizedDescription)
-                        onError(.invalidJSON)
-                    }
-                    
-                } else {
-                    print("status inválido pelo servidor")
-                    onError(.responseStatusCode(code: response.statusCode))
-                }
-                
-            } else {
-                onError(.taskError(error: error!))
+            guard error == nil else {
+                return onError(.taskError(error: error!))
+            }
+            
+            guard let response = response as? HTTPURLResponse else {
+                onError(.noResponse)
+                return
+            }
+            
+            guard response.statusCode == 200 else {
+                print("status inválido pelo servidor")
+                return onError(.responseStatusCode(code: response.statusCode))
+            }
+            
+            guard let data = data else { return }
+            
+            do {
+                let cars = try JSONDecoder().decode([Car].self, from: data)
+                onComplete(cars)
+            } catch {
+                print(error.localizedDescription)
+                onError(.invalidJSON)
             }
         }
         dataTask.resume()
     }
+       
     
     class func saveCar(car: Car, onComplete: @escaping (Bool) -> Void) {
         applyOperation(car: car, operation: .save, onComplete: onComplete)
@@ -97,7 +92,7 @@ class Rest {
     
     class func updateCar(car: Car, onComplete: @escaping (Bool) -> Void) {
         applyOperation(car: car, operation: .update, onComplete: onComplete)
-       
+        
     }
     
     class func deleteCar(car: Car, onComplete: @escaping (Bool) -> Void) {
@@ -106,38 +101,35 @@ class Rest {
     
     private class func applyOperation(car: Car, operation: RestOperation, onComplete: @escaping (Bool) -> Void) {
         let urlString = basePath + "/" + (car._id ?? "")
+        
         guard let url = URL(string: urlString) else {
             onComplete(false)
             return
         }
-        var httpMethod: String = ""
+
         var request = URLRequest(url: url)
+        request.httpMethod = operation.rawValue
         
-        switch operation {
-        case .save:
-            httpMethod = "POST"
-        case .update:
-            httpMethod = "PUT"
-        case .delete:
-            httpMethod = "DELETE"
+        guard let json = try? JSONEncoder().encode(car) else {
+            onComplete(false)
+            return
         }
-        request.httpMethod = httpMethod
-        
-            guard let json = try? JSONEncoder().encode(car) else {
-                onComplete(false)
-                return
-            }
         request.httpBody = json
         let dataTask = session.dataTask(with: request) { (data, response, error) in
-            if error == nil {
-                guard let response = response as? HTTPURLResponse, response.statusCode == 200, let _ = data else {
-                    onComplete(false)
-                    return
-                }
-                onComplete(true)
-            } else {
+            if data == nil {
                 onComplete(false)
+            } else {
+                onComplete(true)
             }
+//            if error == nil {
+//                guard let response = response as? HTTPURLResponse, response.statusCode == 200, let _ = data else {
+//                    onComplete(false)
+//                    return
+//                }
+//                onComplete(true)
+//            } else {
+//                onComplete(false)
+//            }
         }
         dataTask.resume()
     }
